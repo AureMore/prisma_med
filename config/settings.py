@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-8q261^@0yzss3x+q6kbb1=wi0*2(xz7fz0%as@ux7gqwu_is=v
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['prismamedsolutions.com', 'www.prismamedsolutions.com', '.vercel.app']
+
+# 2. Asegúrate de que los hosts permitan el dominio (Añade el punto adelante)
+ALLOWED_HOSTS = ['prismamedsolutions.com', 'www.prismamedsolutions.com', '.vercel.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -113,13 +115,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
-# Al final de settings.py
+# 3. Busca la sección de STATIC y déjala EXACTAMENTE así:
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # Donde están tus fotos ahora
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Donde WhiteNoise las pondrá
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Usa esta versión de storage que es más compatible con Vercel
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# Esta línea es la que falta y es CRUCIAL para Vercel
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
