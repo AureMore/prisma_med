@@ -61,6 +61,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Cambia esta línea por la versión simple para evitar errores de nombres (Hashes)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+WHITENOISE_USE_FINDERS = True
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
