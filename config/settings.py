@@ -116,9 +116,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+# Al final de settings.py
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # Donde están tus fotos ahora
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Donde WhiteNoise las pondrá
 
-# Cambia la que pusimos antes por esta versión simple:
+# Usa esta versión de storage que es más compatible con Vercel
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
