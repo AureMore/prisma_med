@@ -24,9 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8q261^@0yzss3x+q6kbb1=wi0*2(xz7fz0%as@ux7gqwu_is=v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['prismamedsolutions.com', 'www.prismamedsolutions.com', '.vercel.app', 'localhost', '127.0.0.1']
+DEBUG = False
+ALLOWED_HOSTS = ['prismamedsolutions.com', 'www.prismamedsolutions.com', '.vercel.app']
 
 
 # Application definition
